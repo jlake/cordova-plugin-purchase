@@ -1383,7 +1383,7 @@ store.verbosity = 0;
     }
     function storekitRestoreCompleted() {
         store.log.info("ios -> restore completed");
-        store.trigger("refresh-completed");
+        store.trigger("restore-completed");
     }
     function storekitRestoreFailed() {
         store.log.warn("ios -> restore failed");
@@ -1391,7 +1391,7 @@ store.verbosity = 0;
             code: store.ERR_REFRESH,
             message: "Failed to restore purchases during refresh"
         });
-        store.trigger("refresh-failed");
+        store.trigger("restore-failed");
     }
     function storekitDownloadActive(transactionIdentifier, productId, progress, timeRemaining) {
         store.log.info("ios -> is downloading " + productId + "; progress=" + progress + "%; timeRemaining=" + timeRemaining + "s");
